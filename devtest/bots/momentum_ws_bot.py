@@ -226,7 +226,9 @@ class MomentumBot:
             entry_price=self.entry_price,
             high_price=self.high_price,
             entry_time=self.entry_time,
-            trailing_stop=self.trailing_stop
+            trailing_stop=self.trailing_stop,
+            closes=self.prices,
+            volumes=self.volumes
         )
 
         if should_exit:
