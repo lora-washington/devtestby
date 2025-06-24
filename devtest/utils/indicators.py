@@ -33,6 +33,19 @@ def calculate_rsi(prices, period=14):
         rsi[i] = 100. - 100. / (1. + rs)
 
     return rsi
+    
+def calculate_ema_series(data, period):
+    if len(data) < period:
+        return np.array([])
+
+    ema = [np.mean(data[:period])]  # стартовое значение — среднее первых period
+    k = 2 / (period + 1)
+
+    for price in data[period:]:
+        ema.append(price * k + ema[-1] * (1 - k))
+
+    # Заполняем начало массива нулями для выравнивания длины
+    return np.concatenate([np.zeros(period), np.array(ema)])
 
 def calculate_obv(prices, volumes):
     obv = [0]
