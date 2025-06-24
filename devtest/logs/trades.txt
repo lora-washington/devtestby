@@ -1,0 +1,33 @@
+2025-06-24 14:46:16 | TESTCOIN | SELL | Qty: 10 | Entry: 1.0000 | Exit: 1.5000 | PnL: 5.0000 | Reason: 🧪 Тестовая запись
+2025-06-24 14:46:35 | TESTCOIN | SELL | Qty: 10 | Entry: 1.0000 | Exit: 1.5000 | PnL: 5.0000 | Reason: 🧪 Тестовая запись
+2025-06-24 14:49:14 | TESTCOIN | SELL | Qty: 10 | Entry: 1.0000 | Exit: 1.5000 | PnL: 5.0000 | Reason: 🧪 Тестовая запись
+2025-06-24 14:51:46 | XRPUSDT | SELL | Qty: 23.0 | Entry: 2.1851 | Exit: 2.1799 | PnL: -0.1196 | Reason: Timeout ⏳
+2025-06-24 14:51:54 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2727 | Exit: 0.2726 | PnL: -0.0183 | Reason: Timeout ⏳
+2025-06-24 14:52:23 | DOGEUSDT | SELL | Qty: 305.0 | Entry: 0.1638 | Exit: 0.1635 | PnL: -0.1098 | Reason: Timeout ⏳
+2025-06-24 14:57:56 | TESTCOIN | SELL | Qty: 10 | Entry: 1.0000 | Exit: 1.5000 | PnL: 5.0000 | Reason: 🧪 Тестовая запись
+2025-06-24 15:00:42 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2726 | Exit: 0.2728 | PnL: 0.0366 | Reason: Timeout ⏳
+2025-06-24 15:00:44 | XRPUSDT | SELL | Qty: 23.0 | Entry: 2.1849 | Exit: 2.1866 | PnL: 0.0391 | Reason: ❌ Insufficient balance.
+2025-06-24 15:05:46 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2729 | Exit: 0.2731 | PnL: 0.0366 | Reason: Timeout ⏳
+2025-06-24 15:05:54 | XRPUSDT | SELL | Qty: 23.0 | Entry: 2.1888 | Exit: 2.1923 | PnL: 0.0805 | Reason: ❌ Insufficient balance.
+2025-06-24 15:09:05 | DOGEUSDT | SELL | Qty: 305.0 | Entry: 0.1642 | Exit: 0.1641 | PnL: -0.0244 | Reason: Timeout ⏳
+2025-06-24 15:11:02 | XRPUSDT | SELL | Qty: 23.0 | Entry: 2.1873 | Exit: 2.1871 | PnL: -0.0046 | Reason: Timeout ⏳
+2025-06-24 15:11:24 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2730 | Exit: 0.2729 | PnL: -0.0183 | Reason: Timeout ⏳
+2025-06-24 15:16:39 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2727 | Exit: 0.2728 | PnL: 0.0183 | Reason: Timeout ⏳
+2025-06-24 15:18:44 | DOGEUSDT | SELL | Qty: 306.0 | Entry: 0.1635 | Exit: 0.1629 | PnL: -0.1652 | Reason: Timeout ⏳
+2025-06-24 15:21:38 | XRPUSDT | SELL | Qty: 23.0 | Entry: 2.1836 | Exit: 2.1883 | PnL: 0.1081 | Reason: Timeout ⏳
+2025-06-24 15:21:52 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2726 | Exit: 0.2726 | PnL: 0.0000 | Reason: Timeout ⏳
+2025-06-24 15:24:38 | DOGEUSDT | SELL | Qty: 306.0 | Entry: 0.1633 | Exit: 0.1639 | PnL: 0.1836 | Reason: Timeout ⏳
+2025-06-24 15:26:45 | XRPUSDT | SELL | Qty: 23.0 | Entry: 2.1918 | Exit: 2.1899 | PnL: -0.0437 | Reason: ❌ Insufficient balance.
+2025-06-24 15:26:52 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2728 | Exit: 0.2727 | PnL: -0.0183 | Reason: Timeout ⏳
+2025-06-24 15:29:57 | DOGEUSDT | SELL | Qty: 306.0 | Entry: 0.1636 | Exit: 0.1637 | PnL: 0.0245 | Reason: Timeout ⏳
+2025-06-24 15:31:50 | XRPUSDT | SELL | Qty: 23.0 | Entry: 2.1912 | Exit: 2.1868 | PnL: -0.1012 | Reason: Timeout ⏳
+2025-06-24 15:32:05 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2726 | Exit: 0.2725 | PnL: -0.0183 | Reason: Timeout ⏳
+2025-06-24 15:37:40 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2727 | Exit: 0.2727 | PnL: 0.0000 | Reason: Timeout ⏳
+2025-06-24 15:38:53 | XRPUSDT | SELL | Qty: 23.0 | Entry: 2.1849 | Exit: 2.1830 | PnL: -0.0437 | Reason: ❌ Insufficient balance.
+2025-06-24 15:43:43 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2727 | Exit: 0.2726 | PnL: -0.0183 | Reason: Timeout ⏳
+2025-06-24 15:45:03 | XRPUSDT | SELL | Qty: 23.0 | Entry: 2.1775 | Exit: 2.1769 | PnL: -0.0138 | Reason: Timeout ⏳
+2025-06-24 15:49:00 | TRXUSDT | SELL | Qty: 184.0 | Entry: 0.2723 | Exit: 0.2725 | PnL: 0.0368 | Reason: Timeout ⏳
+2025-06-24 15:49:07 | DOGEUSDT | SELL | Qty: 307.0 | Entry: 0.1629 | Exit: 0.1633 | PnL: 0.1044 | Reason: Timeout ⏳
+2025-06-24 15:51:28 | XRPUSDT | SELL | Qty: 23.0 | Entry: 2.1830 | Exit: 2.1865 | PnL: 0.0805 | Reason: ❌ Insufficient balance.
+2025-06-24 15:54:09 | TRXUSDT | SELL | Qty: 183.0 | Entry: 0.2726 | Exit: 0.2726 | PnL: 0.0000 | Reason: Timeout ⏳
+2025-06-24 15:54:19 | DOGEUSDT | SELL | Qty: 305.0 | Entry: 0.1640 | Exit: 0.1637 | PnL: -0.0976 | Reason: Timeout ⏳

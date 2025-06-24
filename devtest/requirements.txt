@@ -1,0 +1,6 @@
+aiogram==2.25.2
+websockets==11.0.3
+ccxt==4.1.98
+requests
+numpy
+aiohttp
