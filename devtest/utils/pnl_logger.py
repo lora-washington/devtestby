@@ -44,3 +44,61 @@ def read_latest_pnl(n=5):
             formatted.append(line.strip())
 
     return "\n".join(formatted)
+    
+def analyze_trades(hours=24):
+    if not os.path.exists(LOG_PATH):
+        return "Нет данных о сделках."
+
+    now = datetime.utcnow()
+    cutoff = now.timestamp() - hours * 3600
+    total = wins = losses = 0
+    total_pnl = 0.0
+
+    try:
+        with open(LOG_PATH, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+
+        for line in lines:
+            try:
+                parts = line.strip().split(" | ")
+                if len(parts) < 8:
+                    continue
+
+                ts_str = parts[0]
+                ts = datetime.strptime(ts_str, "%Y-%m-%d %H:%M:%S").timestamp()
+                if ts < cutoff:
+                    continue
+
+                side = parts[2]
+                pnl_str = parts[6].replace("PnL: ", "")
+                pnl = float(pnl_str)
+
+                if side != "SELL":
+                    continue  # считаем только завершённые сделки
+
+                total += 1
+                total_pnl += pnl
+                if pnl > 0:
+                    wins += 1
+                elif pnl < 0:
+                    losses += 1
+
+            except Exception:
+                continue
+
+        if total == 0:
+            return "Нет сделок за последние 24 часа."
+
+        winrate = wins / total * 100
+
+        return (
+            f"📊 Статистика за 24ч:\n"
+            f"🧾 Сделок: {total}\n"
+            f"✅ Профитных: {wins}\n"
+            f"❌ Убыточных: {losses}\n"
+            f"📈 WinRate: {winrate:.1f}%\n"
+            f"💰 Общий PnL: {total_pnl:.2f} USDT"
+        )
+
+    except Exception as e:
+        return f"❌ Ошибка анализа: {e}"
