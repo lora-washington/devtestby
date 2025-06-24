@@ -40,6 +40,16 @@ def should_enter_trade(closes, volumes, period_rsi=14, ema_fast_period=12, ema_s
         ema_slow = calculate_ema(closes, ema_slow_period)
         if ema_fast <= ema_slow:
             return False, f"EMA12 {ema_fast:.2f} ≤ EMA26 {ema_slow:.2f}"
+                # === Мультифрейм: тренд по "старшему EMA"
+                
+        # Имитация EMA15 как 45-периодная EMA на 1m свечах
+        ema_long_series = calculate_ema_series(closes, period=45)
+        if len(ema_long_series) < 3:
+            return False, "Недостаточно данных для мультифрейма"
+
+        ema_long_slope = (ema_long_series[-1] - ema_long_series[-3]) / ema_long_series[-3] * 100
+        if ema_long_slope < 0:
+            return False, f"Мультифрейм: тренд вниз ({ema_long_slope:.2f}%)"
 
         # Свеча (форма)
         body = abs(closes[-1] - closes[-2])
