@@ -22,13 +22,15 @@ def should_enter_trade(closes, volumes, period_rsi=14, ema_fast_period=12, ema_s
         if rsi_series[-1] < 60:
             return False, f"RSI не пробил 60: {rsi_series[-1]:.2f}"
 
-        # EMA Slope
-        ema_fast_now = calculate_ema(closes[-15:], ema_fast_period)
-        ema_fast_before = calculate_ema(closes[-30:-15], ema_fast_period)
-        ema_slope = (ema_fast_now - ema_fast_before) / ema_fast_before * 100
-        if ema_slope < 0.1:
-            return False, f"EMA slope низкий: {ema_slope:.3f}%"
+        from utils.indicators import calculate_ema_series  # добавь вверху
 
+        ema_series = calculate_ema_series(closes, ema_fast_period)
+        if len(ema_series) < 3:
+            return False, "Недостаточно EMA-данных"
+
+        ema_slope = (ema_series[-1] - ema_series[-3]) / ema_series[-3] * 100
+        if ema_slope < 0.1:
+            return False, f"EMA наклон низкий: {ema_slope:.3f}%"
         # EMA пересечение
         ema_fast = calculate_ema(closes, ema_fast_period)
         ema_slow = calculate_ema(closes, ema_slow_period)
