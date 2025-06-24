@@ -8,6 +8,7 @@ import sys, os
 import time
 import datetime
 import math
+from utils.indicators import calculate_ema_series
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -198,8 +199,24 @@ class MomentumBot:
             dynamic_trailing = self.trailing_stop_pct
 
         previous_trailing = self.trailing_stop
+        # === Адаптивный трейлинг по EMA ===
+        ema_series = calculate_ema_series(self.prices[-30:], period=9)  # 9 — как пример
+        if len(ema_series) >= 3:
+            ema_slope = (ema_series[-1] - ema_series[-3]) / ema_series[-3] * 100
+        else:
+            ema_slope = 0
+        
+        # Корректируем trailing от наклона EMA
+        if ema_slope > 0.5:
+            dynamic_trailing = 0.5
+        elif ema_slope > 0.3:
+            dynamic_trailing = 0.8
+        elif ema_slope > 0.1:
+            dynamic_trailing = 1.2
+        else:
+            dynamic_trailing = self.trailing_stop_pct
         candidate_stop = self.high_price_ema * (1 - dynamic_trailing / 100)
-
+        
         if candidate_stop > self.trailing_stop:
             self.trailing_stop = candidate_stop
             print(f"[TRAILING UPDATE] Новая цена стопа: {self.trailing_stop:.4f} (была: {previous_trailing:.4f})")
