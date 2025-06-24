@@ -11,8 +11,8 @@
   "momentum": {
     "capital_per_trade": 50,
     "rsi_entry_threshold": 35,
-    "ema_slope_min": 0.001,
-    "take_profit_pct": 2.5,
+    "ema_slope_min": 0.1,
+    "take_profit_pct": 5.0,
     "trailing_stop_pct": 1.2,
     "min_volume_usdt": 500000,
     "cooldown_sec": 300,
