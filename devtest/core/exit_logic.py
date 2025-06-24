@@ -33,6 +33,19 @@ def should_exit_trade(current_price, entry_price, high_price, entry_time,
     if time.time() - entry_time > max_hold_sec:
         reasons.append("Timeout ⏳")
 
+        # === Обратный объёмный импульс (высокий объём и свеча против позиции)
+    if closes and volumes and len(closes) >= 3 and len(volumes) >= 3:
+        price_now = closes[-1]
+        price_prev = closes[-2]
+        volume_now = volumes[-1]
+        volume_prev_avg = sum(volumes[-4:-1]) / 3
+
+        is_red_candle = price_now < price_prev
+        volume_spike = volume_now > volume_prev_avg * 2.5
+
+        if is_red_candle and volume_spike:
+            reasons.append("❗Обратный объёмный импульс: выход срочно!")
+
     if reasons:
         return True, reasons[0]
     return False, ""
