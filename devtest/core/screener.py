@@ -16,7 +16,11 @@ def should_enter_trade(closes, volumes, period_rsi=14, ema_fast_period=12, ema_s
         avg_vol = np.mean(volumes[-6:-1])
         if recent_vol < avg_vol * 2:
             return False, f"Объём слабый: {recent_vol:.2f} < {avg_vol * 2:.2f}"
-
+                    # === Доп. проверка: был ли объёмный импульс
+            vol_spikes = [volumes[-i] > volumes[-i-1] for i in range(1, 4)]
+            if sum(vol_spikes) < 2:
+                return False, "Нет уверенного роста объёма (менее 2 всплесков подряд)"
+                
         # RSI
         rsi_series = calculate_rsi(closes, period_rsi)
         if rsi_series[-1] < 60:
