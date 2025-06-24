@@ -4,6 +4,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.types import ParseMode
 from aiogram.utils import executor
 from utils.pnl_logger import read_latest_pnl
+from utils.pnl_logger import analyze_trades
 
 # === Telegram API Token ===
 import json
@@ -73,7 +74,10 @@ async def help_handler(message: types.Message):
 async def status_handler(message: types.Message):
     pnl = read_latest_pnl()
     await message.answer(f"📊 Последние сделки:\n<pre>{pnl}</pre>", parse_mode=ParseMode.HTML)
-
+    
+    analysis = analyze_trades()
+    await message.answer(f"📋 Статистика за 24ч:\n<pre>{analysis}</pre>", parse_mode=ParseMode.HTML)
+    
     if client is None:
         await message.answer("⚠️ Клиент не инициализирован. Баланс недоступен.")
         return
