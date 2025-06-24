@@ -8,8 +8,7 @@ from bots.momentum_ws_bot import MomentumBot
 from telegram_runner import start_telegram
 from telegram_bot import set_bots, register_running_bot, set_client  # 🔁 вернули set_client
 from websocket.bybit_ws_client import BybitWebSocketClient  # 💡 клиент нужен отдельно
-from utils.pnl_logger import test_log
-test_log()
+
 
 
 
