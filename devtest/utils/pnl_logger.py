@@ -19,8 +19,6 @@ def log_trade(symbol, side, amount, entry_price, exit_price, reason=""):
     except Exception as e:
         print(f"[FATAL LOG ERROR] {e} — {symbol=}, {amount=}, {entry_price=}, {exit_price=}")
 
-def test_log():
-    log_trade("TESTCOIN", "SELL", 10, 1.0, 1.5, "🧪 Тестовая запись")
 
 
 def read_latest_pnl(n=5):
