@@ -17,8 +17,8 @@ class BybitWebSocketClient:
         self.is_testnet = is_testnet
 
         if is_testnet:
-            self.base_ws_url = "wss://stream.bybit.com/v5/public/spot"
-            self.base_rest_url = "https://api-demo.bybit.com"
+            self.base_ws_url = "wss://stream-testnet.bybit.com/v5/public/spot"
+            self.base_rest_url = "https://api-testnet.bybit.com"
         else:
             self.base_ws_url = "wss://stream.bybit.com/v5/public/spot"
             self.base_rest_url = "https://api.bybit.com"
