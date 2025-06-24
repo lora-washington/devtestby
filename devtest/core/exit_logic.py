@@ -1,9 +1,10 @@
 import time
 
 def should_exit_trade(current_price, entry_price, high_price, entry_time,
+                      closes=None, volumes=None,
                       tp_pct=5.0, tsl_pct=0.5, sl_pct=2.0, max_hold_sec=120,
-                      trailing_stop=None):  # 👈 добавлен аргумент
-
+                      trailing_stop=None):
+                    
     reasons = []
 
     if trailing_stop is not None and current_price <= trailing_stop:
